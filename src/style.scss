@@ -1,0 +1,63 @@
+@import "./sass/variables";
+@import "./sass/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+body {
+  margin: 0;
+  padding: rem(40);
+  font-family: $font-primary;
+  @include flex-center(column);
+  justify-content: flex-start;
+
+  .header {
+    @include flex-center(column);
+
+    &__title {
+      margin-top: rem(20);
+    }
+  }
+}
+
+.choose-container {
+  display: flex;
+
+  .pokemon {
+    @include flex-center(column);
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &__image,
+    &__name {
+      transition: transform 0.2s;
+    }
+
+    &:hover .pokemon__image {
+      transform: scale(1.1);
+    }
+
+    &:hover .pokemon__name {
+      transform: scale(0.9);
+    }
+
+    &__name {
+      font-size: rem(20);
+    }
+
+    &__type {
+      margin-top: rem(10);
+      width: rem(30);
+    }
+  }
+}
